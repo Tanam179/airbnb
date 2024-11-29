@@ -1,0 +1,272 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer base {
+    html, body, :root {
+        height: 100%;
+    }
+
+    body {
+        @apply font-sans;
+        user-select: none;
+        color: #222;
+        font-synthesis: none;
+        -webkit-font-smoothing: antialiased; /* Cải thiện font trên Chrome */
+        -moz-osx-font-smoothing: grayscale;  /* Cải thiện font trên macOS */
+    }
+
+    input[type='number']::-webkit-outer-spin-button,
+    input[type='number']::-webkit-inner-spin-button,
+    input[type='number'] {
+        -webkit-appearance: none;
+        margin: 0;
+        -moz-appearance: textfield !important;
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus, 
+    input:-webkit-autofill:active{
+        -webkit-background-clip: text;
+        transition: background-color 5000s ease-in-out 0s;
+    }
+
+    .form-phone-number {
+        color: #222;
+    }
+
+    .form-phone-number #phone_number {
+        width: 100%;
+        max-height: 58px;
+        padding: 26px 36px 9px 50px;
+        border-radius: 8px;
+        font-weight: 500;
+        
+    }
+
+    .form-phone-number label {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgb(106 106 106);
+        transition: 0.3s ease;
+        pointer-events: none;
+    }
+
+    .form-phone-number .phone-code {
+        position: absolute;
+        left: 11px;
+        top: 26px;
+        font-weight: 500;
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+    }
+
+    .form-phone-number #phone_number:not(:placeholder-shown) + label,
+    .form-phone-number #phone_number:focus + label {
+        font-size: 14px;
+        top: 8px;
+        transform: translateY(0);
+    }
+
+    .form-phone-number #phone_number:not(:placeholder-shown) + label + .phone-code,
+    .form-phone-number #phone_number:focus + label + .phone-code {
+        opacity: 1;
+        pointer-events: all;
+        visibility: visible;
+    }
+
+
+    .custom-input-two-rows > div:last-child {
+        transform: translateY(-1px);
+    }
+
+    .custom-input .custom-border {
+        border-radius: 8px;
+    }
+
+    .custom-input-two-rows .custom-input .custom-border {
+        border-radius: none;
+    }
+
+
+    .custom-input-two-rows > div:first-child {
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    .custom-input-two-rows.one-field-error > div:first-child .custom-border {
+        border-bottom-color: red;
+    }
+
+    .custom-input-two-rows.one-field-error > div:last-child .custom-border {
+        border-top-color: red;
+    }
+
+    .custom-input-two-rows .custom-border {
+        border-radius: inherit;
+    }
+    .custom-input-two-rows.have-field-focus .custom-border {
+        border-color: #808080 !important;
+    }
+
+    .custom-input-two-rows.have-field-focus > div:first-child .custom-border {
+        border-bottom: none;
+    }
+
+    .custom-input-two-rows.have-field-focus > div:last-child .custom-border {
+        border-top: none;
+    }
+
+    .custom-input-two-rows > div:nth-child(2) {
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+
+    
+
+    .custom-input {
+        color: #222;
+    }
+
+    .custom-input.have-tag {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+
+    .custom-input .tag {
+        font-size: 16px;
+        font-weight: 500;
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+        transition: 0.3s ease;
+        margin-top: 20px;
+        padding: 0 5px 0 11px;
+    }
+
+
+    .custom-input input {
+        flex: 1;
+        width: 100%;
+        border-radius: 8px;
+        font-weight: 500;
+        font-size: 16px;
+        border: none;
+        outline: none;
+        padding: 26px 0 10px 13px;
+    }
+
+    .custom-input.have-tag input {
+        padding: 0;
+        margin-top: 20px;
+        padding-left: 2px;
+    }
+
+    .custom-input label {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgb(106 106 106);
+        transition: 0.3s ease;
+        pointer-events: none;
+    }
+
+    .custom-input input:not(:placeholder-shown) + label,
+    .custom-input input:focus + label {
+        font-size: 14px;
+        top: 8px;
+        transform: translateY(0);
+    }
+
+    .custom-input input:not(:placeholder-shown) + label + .tag,
+    .custom-input input:focus + label + .tag {
+        opacity: 1;
+        pointer-events: all;
+        visibility: visible;
+    }
+
+
+
+
+
+
+
+
+    .form-email {
+        color: #222;
+    }
+
+    .form-email #email {
+        width: 100%;
+        max-height: 58px;
+        padding: 26px 36px 9px 14px;
+        border-radius: 8px;
+        font-weight: 500;
+    }
+
+    .form-email label {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgb(106 106 106);
+        transition: 0.3s ease;
+        pointer-events: none;
+    }
+
+    .form-email #email:not(:placeholder-shown) + label,
+    .form-email #email:focus + label {
+        font-size: 14px;
+        top: 8px;
+        transform: translateY(0);
+    }
+
+    .verification-methods input[type="radio"] {
+        display: none;
+    }
+    
+
+    .verification-methods input[type="radio"] + div{
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid #222;
+    }
+
+    .verification-methods input[type="radio"]:checked + div{
+
+        border-radius: 50%;
+        border: 6px solid #222;
+    }
+
+}
+
+
+.modal {
+    opacity: 0;
+    transform: scale(1.25);
+    transition: all 0.3s linear;
+}
+
+.zoom-enter-done .modal {
+    transform: scale(1);
+    opacity: 1;
+    transition: all 0.3s linear;
+}
+
+/* .zoom-exit.overlay, .zoom-exit-active.overlay {
+    opacity: 0;
+}
+
+.zoom-exit.overlay .modal, .zoom-exit-active.overlay .modal {
+    transform: scale(1.25);
+    opacity: 0;
+} */
